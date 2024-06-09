@@ -1,0 +1,174 @@
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Kasserine', '0000000000', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Kairouan', '0000000001', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Sidi Bouzid', '0000000002', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Gafsa', '0000000003', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Jendouba', '0000000004', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Kebili', '0000000005', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Siliana', '0000000006', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Tataouine', '0000000007', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Le Kef', '0000000008', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Gabes', '0000000009', true);
+
+// Populate Categories
+Category clothing = new Category("Clothing");
+Category foodGroceries = new Category("Food & Groceries");
+Category babySupplies = new Category("Baby Supplies");
+Category educationSupplies = new Category("Education Supplies");
+Category homeHousehold = new Category("Home & Household Items");
+Category toys = new Category("Toys");
+Category electronicsDevices = new Category("Electronics & Devices");
+
+// Save Categories to the database
+categoryRepository.saveAll(Arrays.asList(clothing, foodGroceries, babySupplies, educationSupplies, homeHousehold, toys, electronicsDevices));
+
+// Populate Subcategories
+SubCategory shoes = new SubCategory("Shoes");
+SubCategory upperWear = new SubCategory("Upper Wear");
+SubCategory coatsOuterWear = new SubCategory("Coats Outerwear");
+SubCategory bottomWear = new SubCategory("Bottom Wear");
+SubCategory babyClothes = new SubCategory("Baby Clothes");
+
+SubCategory babyFood = new SubCategory("Baby Food");
+SubCategory cannedGoods = new SubCategory("Canned Goods");
+SubCategory packagedFoods = new SubCategory("Packaged Foods");
+
+SubCategory diapersWipes = new SubCategory("Diapers & Wipes");
+SubCategory nurseryBedding = new SubCategory("Nursery & Bedding");
+SubCategory babyGear = new SubCategory("Baby Gear");
+SubCategory babyFeeding = new SubCategory("Baby Feeding");
+
+SubCategory booksTextbooks = new SubCategory("Books & Textbooks");
+SubCategory bags = new SubCategory("Bags");
+SubCategory uniform = new SubCategory("Uniform");
+SubCategory itDevices = new SubCategory("IT Devices");
+
+SubCategory cleaningSupplies = new SubCategory("Cleaning Supplies");
+SubCategory furniture = new SubCategory("Furniture");
+SubCategory homeAppliances = new SubCategory("Home Appliances");
+SubCategory energySupplies = new SubCategory("Energy Supplies");
+
+SubCategory babyToys = new SubCategory("Baby Toys");
+SubCategory childrenToys = new SubCategory("Children Toys");
+
+SubCategory leisure = new SubCategory("Leisure");
+
+// Associate Subcategories with Categories
+clothing.setCategories(Arrays.asList(shoes, upperWear, coatsOuterWear, bottomWear, babyClothes));
+foodGroceries.setCategories(Arrays.asList(babyFood, cannedGoods, packagedFoods));
+babySupplies.setCategories(Arrays.asList(diapersWipes, nurseryBedding, babyGear, babyFeeding));
+educationSupplies.setCategories(Arrays.asList(booksTextbooks, bags, uniform, itDevices));
+homeHousehold.setCategories(Arrays.asList(cleaningSupplies, furniture, homeAppliances, energySupplies));
+toys.setCategories(Arrays.asList(babyToys, childrenToys));
+electronicsDevices.setCategories(Arrays.asList(leisure));
+
+// Save Subcategories to the database
+categoryRepository.saveAll(Arrays.asList(
+    shoes, upperWear, coatsOuterWear, bottomWear, babyClothes,
+    babyFood, cannedGoods, packagedFoods,
+    diapersWipes, nurseryBedding, babyGear, babyFeeding,
+    booksTextbooks, bags, uniform, itDevices,
+    cleaningSupplies, furniture, homeAppliances, energySupplies,
+    babyToys, childrenToys,
+    leisure
+));
+
+// Populate Subcategories with Products
+productRepository.saveAll(Arrays.asList(
+    new Product("Running Shoes", "Comfortable running shoes", 0, UnityProduct.PIECE, shoes),
+    new Product("T-Shirt", "Cotton T-shirt", 0, UnityProduct.PIECE, upperWear),
+    new Product("Winter Coat", "Warm winter coat", 0, UnityProduct.PIECE, coatsOuterWear),
+    new Product("Jeans", "Blue denim jeans", 0, UnityProduct.PIECE, bottomWear),
+    new Product("Onesies", "Baby onesies", 0, UnityProduct.PIECE, babyClothes),
+
+    new Product("Fresh Milk", "Fresh cow milk", 0, UnityProduct.L, babyFood),
+    new Product("Canned Tomato", "Canned tomatoes", 0, UnityProduct.CAN, cannedGoods),
+    new Product("Rice", "Long grain rice", 0, UnityProduct.KG, packagedFoods),
+
+    new Product("Baby Wipes", "Sensitive baby wipes", 0, UnityProduct.PIECE, diapersWipes),
+    new Product("Baby Blanket", "Soft baby blanket", 0, UnityProduct.PIECE, nurseryBedding),
+    new Product("Stroller", "Baby stroller", 0, UnityProduct.PIECE, babyGear),
+    new Product("Baby Bottles", "Baby feeding bottles", 0, UnityProduct.PIECE, babyFeeding),
+
+    new Product("Math Textbook", "Mathematics textbook", 0, UnityProduct.PIECE, booksTextbooks),
+    new Product("School Bag", "Child's school bag", 0, UnityProduct.PIECE, bags),
+    new Product("School Uniform", "School uniform", 0, UnityProduct.PIECE, uniform),
+    new Product("Calculator", "Scientific calculator", 0, UnityProduct.PIECE, itDevices),
+
+    new Product("All-Purpose Cleaner", "Multi-surface cleaner", 0, UnityProduct.L, cleaningSupplies),
+    new Product("Sofa", "Comfortable sofa", 0, UnityProduct.PIECE, furniture),
+    new Product("Refrigerator", "Refrigerator appliance", 0, UnityProduct.PIECE, homeAppliances),
+    new Product("Solar Lamps", "Solar-powered lamps", 0, UnityProduct.PIECE, energySupplies),
+
+    new Product("Plush Teddy Bear", "Soft plush teddy bear", 0, UnityProduct.PIECE, babyToys),
+    new Product("Board Game", "Family board game", 0, UnityProduct.PIECE, childrenToys),
+    new Product("Action Figures", "Toy action figures", 0, UnityProduct.PIECE, childrenToys),
+
+    new Product("Smart TV", "High-definition smart TV", 0, UnityProduct.PIECE, leisure),
+    new Product("Gaming Console", "Video game console", 0, UnityProduct.PIECE, leisure),
+    new Product("Laptop", "Portable laptop computer", 0, UnityProduct.PIECE, leisure)
+));
+
+
+//**********************************************************************************
+
+-- Populate Categories
+INSERT INTO Category (name) VALUES
+('Clothing'),
+('Food & Groceries'),
+('Baby Supplies'),
+('Education Supplies'),
+('Home & Household Items'),
+('Toys'),
+('Electronics & Devices');
+
+-- Populate Subcategories
+INSERT INTO sub_category (name, category_id) VALUES
+('Shoes', 1), ('Upper Wear', 1), ('Coats Outerwear', 1), ('Bottom Wear', 1), ('Baby Clothes', 1),
+('Baby Food', 2), ('Canned Goods', 2), ('Packaged Foods', 2),
+('Diapers & Wipes', 3), ('Nursery & Bedding', 3), ('Baby Gear', 3), ('Baby Feeding', 3),
+('Books & Textbooks', 4), ('Bags', 4), ('Uniform', 4), ('IT Devices', 4),
+('Cleaning Supplies', 5), ('Furniture', 5), ('Home Appliances', 5), ('Energy Supplies', 5),
+('Baby Toys', 6), ('Children Toys', 6),
+('Leisure', 7);
+
+-- Populate Products
+INSERT INTO product (name, description, quantity, unit, sub_category_id) VALUES
+('Running Shoes', 'Comfortable running shoes', 0, 'PIECE', 1),
+('T-Shirt', 'Cotton T-shirt', 0, 'PIECE', 2),
+('Winter Coat', 'Warm winter coat', 0, 'PIECE', 3),
+('Jeans', 'Blue denim jeans', 0, 'PIECE', 4),
+('Onesies', 'Baby onesies', 0, 'PIECE', 5),
+('Fresh Milk', 'Fresh cow milk', 0, 'L', 6),
+('Canned Tomato', 'Canned tomatoes', 0, 'CAN', 7),
+('Rice', 'Long grain rice', 0, 'KG', 8),
+('Baby Wipes', 'Sensitive baby wipes', 0, 'PIECE', 9),
+('Baby Blanket', 'Soft baby blanket', 0, 'PIECE', 10),
+('Stroller', 'Baby stroller', 0, 'PIECE', 11),
+('Baby Bottles', 'Baby feeding bottles', 0, 'PIECE', 12),
+('Math Textbook', 'Mathematics textbook', 0, 'PIECE', 13),
+('School Bag', 'Child''s school bag', 0, 'PIECE', 14),
+('School Uniform', 'School uniform', 0, 'PIECE', 15),
+('Calculator', 'Scientific calculator', 0, 'PIECE', 16),
+('All-Purpose Cleaner', 'Multi-surface cleaner', 0, 'L', 17),
+('Sofa', 'Comfortable sofa', 0, 'PIECE', 18),
+('Refrigerator', 'Refrigerator appliance', 0, 'PIECE', 19),
+('Solar Lamps', 'Solar-powered lamps', 0, 'PIECE', 20),
+('Plush Teddy Bear', 'Soft plush teddy bear', 0, 'PIECE', 21),
+('Board Game', 'Family board game', 0, 'PIECE', 22),
+('Action Figures', 'Toy action figures', 0, 'PIECE', 22),
+('Smart TV', 'High-definition smart TV', 0, 'PIECE', 23),
+('Gaming Console', 'Video game console', 0, 'PIECE', 23),
+('Laptop', 'Portable laptop computer', 0, 'PIECE', 23);
+
+
+-- warehouses
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Kasserine', '0000000000', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Kairouan', '0000000001', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Sidi Bouzid', '0000000002', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Gafsa', '0000000003', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Jendouba', '0000000004', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Kebili', '0000000005', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Siliana', '0000000006', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Tataouine', '0000000007', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Le Kef', '0000000008', true);
+INSERT INTO warehouse (address_name, phone, available) VALUES ('Gabes', '0000000009', true);

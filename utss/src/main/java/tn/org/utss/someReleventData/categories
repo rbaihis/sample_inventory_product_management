@@ -1,0 +1,88 @@
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'Clothing'),
+(2, 'Food & Groceries'),
+(3, 'Baby Supplies'),
+(4, 'Education Supplies'),
+(5, 'Home & Household Items'),
+(6, 'Toys'),
+(7, 'Electronics & Devices');
+
+
+
+INSERT INTO `sub_category` (`id`, `name`, `category_id`) VALUES
+(1, 'Shoes', 1),
+(2, 'Upper Wear', 1),
+(3, 'Coats Outerwear', 1),
+(4, 'Bottom Wear', 1),
+(5, 'Baby Clothes', 1),
+(6, 'Baby Food', 2),
+(7, 'Canned Goods', 2),
+(8, 'Packaged Foods', 2),
+(9, 'Diapers & Wipes', 3),
+(10, 'Nursery & Bedding', 3),
+(11, 'Baby Gear', 3),
+(12, 'Baby Feeding', 3),
+(13, 'Books & Textbooks', 4),
+(14, 'Bags', 4),
+(15, 'Uniform', 4),
+(16, 'IT Devices', 4),
+(17, 'Cleaning Supplies', 5),
+(18, 'Furniture', 5),
+(19, 'Home Appliances', 5),
+(20, 'Energy Supplies', 5),
+(21, 'Baby Toys', 6),
+(22, 'Children Toys', 6),
+(23, 'Leisure', 7);
+
+
+
+
+INSERT INTO `warehouse` (`id`, `address_name`, `available`, `phone`) VALUES
+(1, 'Kasserine', b'1', '77000001'),
+(2, 'Kairouan', b'1', '77000002'),
+(3, 'Sidi Bouzid', b'1', '77000003'),
+(4, 'Gafsa', b'1', '76000001'),
+(5, 'Jendouba', b'1', '78000001'),
+(6, 'Kebili', b'1', '76000002'),
+(7, 'Siliana', b'1', '78000002'),
+(8, 'Tataouine', b'1', '76000003'),
+(9, 'Le Kef', b'1', '78000003'),
+(10, 'Gabes', b'1', '75000001');
+
+
+
+
+INSERT INTO `product` (`id`, `description`, `image_uri`, `name`, `quantity`, `unit`, `sub_category_id`) VALUES
+(1, 'Comfortable running shoes', NULL, 'Running Shoes', 0, 'PIECE', 1),
+(2, 'Cotton T-shirt', NULL, 'T-Shirt', 0, 'PIECE', 2),
+(3, 'Warm winter coat', NULL, 'Winter Coat', 0, 'PIECE', 3),
+(4, 'Blue denim jeans', NULL, 'Jeans', 0, 'PIECE', 4),
+(5, 'Baby onesies', NULL, 'Onesies', 0, 'PIECE', 5),
+(6, 'Fresh cow milk', NULL, 'Fresh Milk', 0, 'L', 6),
+(7, 'Canned tomatoes', NULL, 'Canned Tomato', 0, 'CAN', 7),
+(8, 'Long grain rice', NULL, 'Rice', 0, 'KG', 8),
+(9, 'Sensitive baby wipes', NULL, 'Baby Wipes', 0, 'PIECE', 9),
+(10, 'Soft baby blanket', NULL, 'Baby Blanket', 0, 'PIECE', 10),
+(11, 'Baby stroller', NULL, 'Stroller', 0, 'PIECE', 11),
+(12, 'Baby feeding bottles', NULL, 'Baby Bottles', 0, 'PIECE', 12),
+(13, 'Mathematics textbook', NULL, 'Math Textbook', 0, 'PIECE', 13),
+(14, 'Child\'s school bag', NULL, 'School Bag', 0, 'PIECE', 14),
+(15, 'School uniform', NULL, 'School Uniform', 0, 'PIECE', 15),
+(16, 'Scientific calculator', NULL, 'Calculator', 0, 'PIECE', 16),
+(17, 'Multi-surface cleaner', NULL, 'All-Purpose Cleaner', 0, 'L', 17),
+(18, 'Comfortable sofa', NULL, 'Sofa', 0, 'PIECE', 18),
+(19, 'Refrigerator appliance', NULL, 'Refrigerator', 0, 'PIECE', 19),
+(20, 'Solar-powered lamps', NULL, 'Solar Lamps', 0, 'PIECE', 20),
+(21, 'Soft plush teddy bear', NULL, 'Plush Teddy Bear', 0, 'PIECE', 21),
+(22, 'Family board game', NULL, 'Board Game', 0, 'PIECE', 22),
+(23, 'Toy action figures', NULL, 'Action Figures', 0, 'PIECE', 22),
+(24, 'High-definition smart TV', NULL, 'Smart TV', 0, 'PIECE', 23),
+(25, 'Video game console', NULL, 'Gaming Console', 0, 'PIECE', 23),
+(26, 'Portable laptop computer', NULL, 'Laptop', 0, 'PIECE', 23);
+
+
+INSERT INTO `user` (`id`, `email`, `last_name`, `name`, `password`, `role`) VALUES
+(1, 'rabbehs@gmail.com', 'rabbeh', 'seif', '123', 'ADMIN'),
+(2, 'rabbehseif@gmail.com', 'rh', 'ali', '123', 'AGENT'),
+(3, 'rbaihiseif@gmail.com', 'andolsi', 'amir', '123', 'WAREHOUSE_AGENT');
+
